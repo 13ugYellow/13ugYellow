@@ -1,4 +1,4 @@
-### Hi there 👋
+### 大家好！ 👋
 
 <!--
 **13ugYellow/13ugYellow** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -14,3 +14,5 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+我是沈俊杰，**计算机科学与技术2班**的学生。尝试过学习多种计算机语言但都只是略懂一二，但目前想要更加熟练使用python。
+并没有实习项目经验，打算考研（未开始准备。。）
