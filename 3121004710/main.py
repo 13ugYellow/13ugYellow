@@ -54,7 +54,7 @@ def check_similarity(org, copy, ans):
         # 将重复率写入文件ans.txt中 保留两位小数
         with open(ans, 'w', encoding='utf-8') as file:
             file.write("重复率为：{:.2f}%".format(similarity * 100))
-    except Exception as e:
+    except Exception:
         print("simhash计算失败")
 
 
