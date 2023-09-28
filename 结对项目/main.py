@@ -33,7 +33,7 @@ class Create(object):
     def create_arith(self, r):
         x = 0
         list = []
-        # 随机生成运算符的数量
+        # 随机生成运算符的数量1-3
         operator_num = random.randint(1, 3)
         e1 = Create()
         e2 = Create()
