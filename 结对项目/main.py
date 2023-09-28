@@ -33,6 +33,7 @@ class Create(object):
     def create_arith(self, r):
         x = 0
         list = []
+        # 随机生成运算符的数量
         operator_num = random.randint(1, 3)
         e1 = Create()
         e2 = Create()
@@ -249,12 +250,12 @@ class Judge(object):
 class Compare(object):
 
     #  对两个文件中的答案进行比较并记录
-    def grade(self, exercise_file, answer_file):
+    def grade(self, reanswer_file, answer_file):
         correct = []
         wrong = []
         co = 0
         wr = 0
-        with open(answer_file, 'r', encoding='utf-8') as f1, open(exercise_file, 'r', encoding='utf-8') as f2:
+        with open(answer_file, 'r', encoding='utf-8') as f1, open(reanswer_file, 'r', encoding='utf-8') as f2:
             answers = f2.readlines()
             line = 0
             for r_answers in f1.readlines():
@@ -397,7 +398,7 @@ class Arith(object):
         print("四则运算题目生成完毕，数量为%d个" % problem_number)
 
     # 支持命令行键入参数
-    @profile()
+    # @profile()
     def main(self, arith, argv):
         problem_number = None
         num_range = None
@@ -433,11 +434,13 @@ class Arith(object):
 if __name__ == "__main__":
 
     arith = Arith()
-    #lp = LineProfiler()  # 构造分析对象
-    arith.main(arith, sys.argv[1:])
-    #test_func = lp(arith.main)  # 添加分析主函数，注意这里并不是执行函数，所以传递的是是函数名，没有括号。
-    #test_func(arith, sys.argv[1:])  # 执行主函数，如果主函数需要参数，则参数在这一步传递，例如test_func(参数1, 参数2...)
-    #lp.print_stats()  # 打印分析结果
+    compare = Compare()
+    lp = LineProfiler()  # 构造分析对象
+    # arith.main(arith, sys.argv[1:])
+    lp.add_function(compare.grade)
+    test_func = lp(arith.main)  # 添加分析主函数，注意这里并不是执行函数，所以传递的是是函数名，没有括号。
+    test_func(arith, sys.argv[1:])  # 执行主函数，如果主函数需要参数，则参数在这一步传递，例如test_func(参数1, 参数2...)
+    lp.print_stats()  # 打印分析结果
 
 
 
