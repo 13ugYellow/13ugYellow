@@ -65,7 +65,7 @@ if __name__ == '__main__':
     # 运行主程序check_similarity()的语句 测试内存占用时使用 测试时间占用时需要注释
     check_similarity(org_path, copy_path, ans_path)
 
-    # 时间性能分析
+    # 时间性能分析 测试时间时使用，测试内存占用时需要注释
     '''
     lp = LineProfiler()
     lp.add_function(text_filter)
